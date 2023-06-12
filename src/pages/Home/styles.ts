@@ -1,8 +1,7 @@
-import { Export } from 'phosphor-react';
 import styled from 'styled-components';
 
 export const Container =styled.div`
-    padding: 2rem 8rem;
+    padding: 2rem 10rem;
 
 `;
 export const HeaderContainer = styled.div`
@@ -13,11 +12,12 @@ export const HeaderContainer = styled.div`
 `;
 
 export const Content = styled.div`
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
+    
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
 
-    justify-content: center;
+    justify-content: space-between;
     > div { 
         img{ 
             width: 476px;

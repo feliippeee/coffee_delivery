@@ -1,8 +1,8 @@
 import { Container, Content, Logo, Actions } from './styles';
-import logoImg from '../../assets/logo.png'
-import { ButtonCart } from '../ButtonCart';
+import logoImg from '../assets/logo.png'
 import { MapPin } from 'phosphor-react';
-export function Header() {
+import { ButtonCart } from '../components/ButtonCart';
+export function LayoutHeader() {
     const cart = [{cart: 1}];
     return (
         <Container>

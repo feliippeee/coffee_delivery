@@ -2,40 +2,55 @@ import { Amount, CoffeeCard, CoffeName, Container, FooterCard, ImgCoffee, Quanti
 import CoffeeExpressoTradicional from '../../assets/expresso-tradicional.png';
 import { Minus, Plus, ShoppingCart } from "phosphor-react";
 import { ButtonCart } from "../ButtonCart";
-interface CoffeeProps {
-    tag: string | string[];
-}[];
 
-export function CoffeeCardList({tag}: CoffeeProps) {
+export interface Coffee {
+    id: number;
+    tags: string[];
+    name: string;
+    description: string;
+    photo: string;
+    price: number;
+}
+
+interface CoffeeProps {
+    coffee : Coffee;
+}
+
+export function CoffeeCardList({ id,
+    tags,
+    name,
+    description,
+    photo,
+    price}: Coffee) {
     return (
         <Container>
             <CoffeeCard>
                 <ImgCoffee>
-                    <img src={CoffeeExpressoTradicional} alt="" />
+                    <img src={photo} alt="" />
                 </ImgCoffee>
                 <Tag>
                     <span>
-                        {tag}
+                        {tags}
                     </span>
                 </Tag>
                 <CoffeName>
-                    Expresso Tradicional
+                    {name}
                 </CoffeName>
                 <SubtitleCoffee>
-                    O tradicional café feito com água quente e grãos moídos
+                    {description}
                 </SubtitleCoffee>
 
                 <FooterCard>
                     <Amount>
                         R$ 
                         <strong>
-                            9,90
+                            {price}
                         </strong>
                     </Amount>
                     <div>
 
                     <Quantity>
-                        <Minus size={14} /><span>1</span> <Plus size={14} />                    
+                        <Minus onClick={() => console.log("menos um")} size={14} /><span>1</span> <Plus onClick={() => console.log("mais um")} size={14} />                    
                     </Quantity>
                     <ButtonCart color="white" size={20} />
                     </div>
