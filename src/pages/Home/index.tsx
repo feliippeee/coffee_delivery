@@ -1,11 +1,14 @@
-import { Container, HeaderContainer, Title, SubTitle, ColumnLeft, Content, ContainerTitles, CardArea, TitleHome, Card } from './styles';
+import { Container, HeaderContainer, Title, SubTitle, ColumnLeft, Content, ContainerTitles, CardArea, TitleHome, Card, ImageBanner } from './styles';
 import bannerImg from '../../assets/banner.png';
-import { Coffee, CoffeeCardList } from '../../components/CoffeeCardList';
+import { CoffeeCardList } from '../../components/CoffeeCardList';
 import { CoffeeItem } from '../../components/CoffeeItem';
 import { coffees } from '../../data';
-
+import { CartContext } from '../../context/contextData';
+import { useCart } from '../../hooks/useCart';
 
 export function Home() {
+    const {cartItems } = useCart()
+    
     return (
         <Container>
             <HeaderContainer>
@@ -27,10 +30,8 @@ export function Home() {
                     </CardArea>
                 </ColumnLeft>
 
-               <div>
-                    <img src={bannerImg} alt="" />
-               </div>
-
+               <ImageBanner src={bannerImg} alt="" />
+                 
                 
             </Content>
 
@@ -39,17 +40,11 @@ export function Home() {
                 Nossos Cafés
             </TitleHome>
             <Card>
-            {coffees.map((cof) => (
+            {coffees.map((coffee) => (
                 <CoffeeCardList 
-                    key={cof.id}
-                    id={cof.id}
-                    name={cof.name}
-                    description={cof.description}
-                    tags={cof.tags}
-                    photo={cof.photo}
-                    price={cof.price}
-
-
+                key={coffee.id}
+                coffee={coffee}
+                
                 
                 />
             ))}

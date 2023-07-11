@@ -1,7 +1,9 @@
 import { Amount, CoffeeCard, CoffeName, Container, FooterCard, ImgCoffee, Quantity, SubtitleCoffee, Tag } from "./styles";
-import CoffeeExpressoTradicional from '../../assets/expresso-tradicional.png';
 import { Minus, Plus, ShoppingCart } from "phosphor-react";
 import { ButtonCart } from "../ButtonCart";
+import { useState } from "react";
+import { useCart } from "../../hooks/useCart";
+import { formatMoney } from "../../utils/formattedMoney";
 
 export interface Coffee {
     id: number;
@@ -13,46 +15,75 @@ export interface Coffee {
 }
 
 interface CoffeeProps {
-    coffee : Coffee;
+    coffee: Coffee;
 }
 
-export function CoffeeCardList({ id,
-    tags,
-    name,
-    description,
-    photo,
-    price}: Coffee) {
+export function CoffeeCardList({ coffee }: CoffeeProps) {
+    const [ quantity, setQuantity ] = useState(1);
+    const formattedPrice = formatMoney(coffee.price);
+   
+    const { addCoffeeToCart, cartItems} = useCart();
+   
+   
+    function handleAddCart() {
+        setQuantity(state => state + 1)
+    }
+
+    function handleSub() {
+        setQuantity(state => state - 1)
+    }
+
+
+    function handleAddToCart() {
+        const coffeeToAdd = {
+            ...coffee,
+            quantity,
+        }
+        addCoffeeToCart(coffeeToAdd)
+    }
+    console.log(cartItems)
+       // const { addItemCart, subItemCart } = useContext(CartContext)
     return (
         <Container>
-            <CoffeeCard>
+            <CoffeeCard key={coffee.id}>
                 <ImgCoffee>
-                    <img src={photo} alt="" />
+                    <img src={coffee.photo} alt="" />
                 </ImgCoffee>
                 <Tag>
                     <span>
-                        {tags}
+                        {coffee.tags}
                     </span>
                 </Tag>
                 <CoffeName>
-                    {name}
+                    {coffee.name}
                 </CoffeName>
                 <SubtitleCoffee>
-                    {description}
+                    {coffee.description}
                 </SubtitleCoffee>
 
                 <FooterCard>
                     <Amount>
                         R$ 
                         <strong>
-                            {price}
+                            {formattedPrice}
                         </strong>
                     </Amount>
                     <div>
-
                     <Quantity>
-                        <Minus onClick={() => console.log("menos um")} size={14} /><span>1</span> <Plus onClick={() => console.log("mais um")} size={14} />                    
+                        <button  disabled={quantity <= 1} onClick={handleSub}>
+                        <Minus size={14} />
+                        </button>
+                            <span>{quantity}</span> 
+                        <button>
+                            <Plus onClick={handleAddCart} size={14} />                    
+                        </button>
                     </Quantity>
-                    <ButtonCart color="white" size={20} />
+                    <ButtonCart
+                        backgroundColor="purple-dark"
+                        color="white"
+                        size={20}
+                        onClick={handleAddToCart}   
+                    />
                     </div>
                     
                 

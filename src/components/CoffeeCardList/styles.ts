@@ -10,7 +10,7 @@ export const CoffeeCard = styled.div`
     flex-direction: column;
     height: 310px;
     width: 256px;
-    background: ${(props) => props.theme['base-card']};
+    background: ${(props) => props.theme.colors['base-card']};
     border-radius: 0.375rem 2.25rem;    
 `;
 
@@ -28,8 +28,8 @@ export const Tag = styled.div`
         display: flex;
         flex-direction: row;
         gap: 12px;
-        background: ${(props) => props.theme['yellow-light']};
-        color: ${(props) => props.theme['yellow-dark']};
+        background: ${(props) => props.theme.colors['yellow-light']};
+        color: ${(props) => props.theme.colors['yellow-dark']};
         padding: 0.25rem 0.5rem;
         border-radius: 1rem;
         text-transform: uppercase;
@@ -44,14 +44,14 @@ export const CoffeName = styled.h2`
     font-weight: 700;
     line-height: 26px;
     text-align: center;
-    color: ${(props) => props.theme['base-subtitle']}
+    color: ${(props) => props.theme.colors['base-subtitle']}
 `;
 export const SubtitleCoffee = styled.h3`
     font-family: 'Roboto';
     font-size: 14px;
     font-weight: 400;
     line-height: 18px;
-    color: ${(props) => props.theme['base-label']};
+    color: ${(props) => props.theme.colors['base-label']};
     text-align: center;
 
     margin: 8px 20px 33px 20px;
@@ -76,7 +76,7 @@ export const Amount = styled.div`
         font-weight: 800;
         line-height: 31.2px;
         text-align: right;
-        color: ${(props) => props.theme['base-text']};
+        color: ${(props) => props.theme.colors['base-text']};
     }
 `;
 export const FooterCard = styled.div`
@@ -96,16 +96,24 @@ export const Quantity = styled.div`
         gap: 4px;
         justify-content: center;
         align-items: center;
-        background: ${(props) => props.theme['base-button']};
+        background: ${(props) => props.theme.colors['base-button']};
         padding: 8px;
         border-radius: 6px;
-        color: ${(props) => props.theme['purple']};
+        color: ${(props) => props.theme.colors['purple']};
         
         span {
             margin: 0 4px;
             font-family: 'Roboto';
-            color: ${(props) => props.theme['base-title']};
+            color: ${(props) => props.theme.colors['base-title']};
 
         }
+        button {
+            
+            
+        }
      
+`;
+
+export const QuantityInput = styled.div`
+
 `;

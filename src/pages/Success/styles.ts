@@ -10,13 +10,13 @@ export const Container = styled.div`
         font-size: 2rem;
         font-family: 'Baloo 2';
         font-weight: 800;
-        color: ${(props) => props.theme['yellow-dark']};
+        color: ${(props) => props.theme.colors['yellow-dark']};
         line-height: 130%;
 
     }
     h2 {
         font-size: 20px;
-        color: ${(props) => props.theme['base-text']};
+        color: ${(props) => props.theme.colors['base-text']};
     }
 `;
 
@@ -33,7 +33,7 @@ export const OrderInfo = styled.div`
     justify-content: center;
     flex-direction: column;
     
-    border: solid linear-gradient(${props => props.theme['purple-dark']}, ${props => props.theme['yellow-dark']});
+    border: solid linear-gradient(${props => props.theme.colors['purple-dark']}, ${props => props.theme.colors['yellow-dark']});
     
     padding: 40px;
     gap: 2rem;
@@ -50,7 +50,7 @@ export const OrderInfo = styled.div`
             background: blue;
             border-radius: 50%;
             padding: 8px;
-            color: ${(props) => props.theme.white};
+            color: ${(props) => props.theme.colors.white};
         }
     }
 `;

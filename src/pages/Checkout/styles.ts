@@ -4,8 +4,6 @@ export const Container = styled.div`
     display: flex;
     justify-content: space-between;
     flex-direction: row;
-    gap: 1rem;
-    //margin-bottom: 2rem;
     margin: 2.5rem 10rem;
 `;
 
@@ -20,103 +18,42 @@ export const CoffeeCardInfos = styled.div`
     }
 `;
 
+export const FormCart = styled.form`
+    display: grid;
+    grid-template-columns: 40rem 28rem;
+    gap: 2rem;
+`;
+
 export const ContainerWrapper = styled.div`
-    border-radius: 6px;
-    background: ${(props) => props.theme['base-card']};
-    margin-bottom: 1rem;
-`;
-
-export const CoffeeText = styled.div`
-    gap: 12px;
     display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    padding: 2.5rem 2.5rem 32px 2.5rem;
-    
-    > div { 
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        font-weight: 400;
-        align-items: flex-start;
-        align-self: flex-start;
-
-        > h3 {
-            font-size: 16px;
-            line-height: 20.8px;
-            color: ${(props) => props.theme['base-subtitle']};
-        }
-        > p {
-            color: ${(props) => props.theme['base-text']};
-            font-size: 14px;
-            line-height: 18px;
-            
-        }
-    }
-
+    flex-direction: column;
+    gap: 32px;
+    border-radius: 6px;
+    background: ${(props) => props.theme.colors['base-card']};
+    padding: 2.5rem;
+    margin-bottom: 1rem;
+   
 `;
 
-export const Inputs = styled.div`
-    padding:  0 2.5rem 2.5rem 2.5rem;
-    margin-bottom: 0.75rem;
-    form {
-        display: flex;
-        gap: 1rem;
-        flex-direction: column;
-    }
+export const SelectMethodPayment = styled.div`
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    
+`;
 
-    input {
-        height: 2.625rem;
-        background: ${(props) => props.theme['base-input']};
-        border: 1px solid ${(props) => props.theme['base-button']};
-        border-radius: 0.25rem;
-        padding: 0.75rem;
-    }
+export const FormInputs = styled.div`
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    padding:  0 2.5rem 2.5rem 0;
+    margin-bottom: 0.75rem;
 `;
 
 export const GroupInputs = styled.div`
     display: flex;
     flex-direction: row;
     gap: 0.75rem;
-`;
-
-export const BottomFooter = styled.div`
-    display: flex;
-    width: 100%;
-    flex-direction: row;
-    gap: 1rem;
-    
-    div {
-        padding: 0 2.5rem 2.5rem 2.5rem;
-        width: 100%;
-        justify-content: space-around;
-        gap: 0.75rem;
-        display: flex;
-        background: ${(props) => props.theme['base-card']};
-        
-        button {
-            width: 100%;
-            display: flex;
-            justify-content: flex-start;
-            font-size: 0.75rem;
-            gap: 0.75rem;
-            font-family: 'Roboto';
-            padding: 1rem;
-            background: ${(props) => props.theme['base-button']};
-            color: ${(props) => props.theme['base-text']};
-            font-weight: 400;
-            line-height: 1rem;
-            border: 0;
-            border-radius: 0.375rem;
-            text-transform: uppercase;
-
-            svg {
-                color: ${(props) => props.theme['purple-dark']};
-                width: 1rem;
-                height: 1rem;
-            }
-        }
-    }
 `;
 
 export const CardCheckoutList = styled.div`
@@ -143,8 +80,8 @@ export const ResumeCard = styled.div`
         text-transform: uppercase;
 
         border-radius: 0.375rem;
-        color: ${(props) => props.theme.white};
-        background: ${(props) => props.theme['yellow']};
+        color: ${(props) => props.theme.colors.white};
+        background: ${(props) => props.theme.colors['yellow']};
         border: 0;
        
     }
@@ -162,7 +99,7 @@ export const Item = styled.div`
     font-size: 0.875rem;
     font-weight: 400;
 
-    color: ${(props) => props.theme['base-text']};
+    color: ${(props) => props.theme.colors['base-text']};
    
     span {
         font-size: 1rem;
@@ -171,5 +108,13 @@ export const Item = styled.div`
 
 export const CardWrapper = styled.div`
     border-radius: 6px 44px;
-    background: ${(props) => props.theme['base-card']};
+    background: ${(props) => props.theme.colors['base-card']};
 `;
+
+export const MethodPayment = styled.div`
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+   
+`;
+

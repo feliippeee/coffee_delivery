@@ -23,14 +23,14 @@ export const Actions = styled.div`
     flex-direction: row;
     
     gap: 0.75rem;
-    color: ${(props) => props.theme['purple-dark']};
+    color: ${(props) => props.theme.colors['purple-dark']};
     
     > div {
         display: flex;
         gap: 0.25rem;
         padding: 0.5rem;
         border-radius: 0.375rem;
-        background: ${(props) => props.theme['purple-light']};
+        background: ${(props) => props.theme.colors['purple-light']};
         align-items: center;
     > span {
         font-size: 0.725rem;

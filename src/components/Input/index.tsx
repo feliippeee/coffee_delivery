@@ -1,14 +1,23 @@
-import { InputHTMLAttributes } from "react";
-import { Container, InputContainer } from "./styles";
+import { InputHTMLAttributes, forwardRef } from "react";
+import { RegularText } from "../Typography";
+import { InputStyleContainer, InputStyled, InputWrapper, RightText } from "./styles";
 
-interface Props extends InputHTMLAttributes<HTMLInputElement> {
-    tamanho?: string;
-}
+type Props = InputHTMLAttributes<HTMLInputElement> & {
+    error?: string;
+    rightText?: string;
+  };
 
-export function Input({tamanho = '100%', ...rest}: Props) {
-    return (
-        
-            <InputContainer {...rest} tamanho={tamanho} />
+  export const Input = forwardRef<HTMLInputElement, Props>(
+    ({ error, rightText, className, ...props }, ref) => {
+      return (      
+        <InputWrapper className={className}>
+        <InputStyleContainer hasError={!!error}>
+          <InputStyled ref={ref} {...props} />
+          {rightText && <RightText>{rightText}</RightText>}
+        </InputStyleContainer>
+        {error && <RegularText size="s">{error}</RegularText>}
+      </InputWrapper>
         
     )
 }
+)

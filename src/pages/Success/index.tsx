@@ -2,6 +2,8 @@ import { Container, Information, Order, OrderInfo } from "./styles";
 import Illustration from '../../assets/Illustration.png';
 import { CurrencyDollar, MapPin, Timer } from "phosphor-react";
 import { useTheme } from "styled-components";
+import { useContext } from "react";
+import { CartContext } from "../../context/contextData";
 
 interface Props {
     background: string;
@@ -9,6 +11,7 @@ interface Props {
 
 export function Success() {
    const theme = useTheme()
+   const { name, idade } = useContext(CartContext)
     return (
         <Container>
             <h1>Uhu! Pedido confirmado</h1>
@@ -20,7 +23,7 @@ export function Success() {
                 <div>
                     <MapPin />
                     <Information>
-                        <p>Entrega em <strong>Rua João Daniel Martinelli, 102</strong></p> 
+                        <p>Entrega em {name} <strong>Rua João Daniel Martinelli, 102</strong></p> 
                         <p>Farrapos - Porto Alegre, RS</p>
                     </Information>
                 </div>

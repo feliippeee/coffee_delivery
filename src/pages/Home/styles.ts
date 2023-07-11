@@ -7,7 +7,7 @@ export const Container =styled.div`
 export const HeaderContainer = styled.div`
     display: flex;
     justify-content: center;
-    height: 544px;
+    height: 34rem;
 
 `;
 
@@ -18,19 +18,13 @@ export const Content = styled.div`
     justify-content: space-between;
 
     justify-content: space-between;
-    > div { 
-        img{ 
-            width: 476px;
-            height: 360px;
-        }
-    }
 
 `;
 
 
 export const ColumnLeft = styled.div`
     display: flex;
-    width: 588px;
+    width: 36.75rem;
     flex-direction: column;
     gap: 1rem;
     
@@ -68,19 +62,19 @@ export const SubTitle = styled.p`
     margin-top: 1rem;
 `;
 
-export const Image = styled.img`
-    max-width: 476px;
-    height: 360px;
-    margin-left: 56px;
+export const ImageBanner = styled.img`
+    max-width: 29.75rem;
+    height: 22.5rem;
+    margin-left: 3.5rem;
 `;
 
 export const TitleHome = styled.h2`
-    font-size: 32px;
+    font-size: 2rem;
     font-family: 'Baloo 2', sans-serif;
     font-weight: 800;
-    line-height: 41.6px;
-    color: ${(props) => props.theme['base-subtitle']};
-    margin-bottom: 54px;
+    line-height: 2.6rem;
+    color: ${(props) => props.theme.colors['base-subtitle']};
+    margin-bottom: 3.375rem;
 `;
 
 export const Card = styled.div`

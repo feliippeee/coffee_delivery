@@ -3,6 +3,7 @@ import styled, { css } from "styled-components";
 interface Props{
     backgroundColor: 'yellow-light' | 'purple-dark';
     color: 'yellow-dark' | 'white';
+
 }
 
 export const Button = styled.button<Props>`
@@ -13,19 +14,20 @@ export const Button = styled.button<Props>`
     justify-content: center;
     align-items: center;
     padding: 0.5rem;
+    cursor: pointer;
     background: ${({backgroundColor, theme}) => css`
-        ${backgroundColor  && theme[backgroundColor]};       
+        ${backgroundColor  && theme.colors[backgroundColor]};       
         `};
     
     color: ${({color, theme}) => css`
-    ${color && theme[color]};`
+    ${color && theme.colors[color]};`
 
 };
      
     border: none;
     border-radius: 0.375rem;
     margin-left: 0.5rem;
-    
+        
 
 `;
 
@@ -39,8 +41,8 @@ export const CartCircleQuantity = styled.span`
     width: 1.25rem;
     height: 1.25rem;
     border-radius: 50%;
-    background: ${ props => props.theme['yellow-dark']};
-    color: ${ props => props.theme.white};
+    background: ${ props => props.theme.colors['yellow-dark']};
+    color: ${ props => props.theme.colors.white};
 
     font-family: 'Roboto';
     font-weight: bold;
